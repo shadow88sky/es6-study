@@ -35,6 +35,7 @@ class Polygon {}
 ```
 
 *   类表达式
+
 >类表达式是定义类的另外一种方式，就像函数表达式一样，在类表达式中，类名是可有可无的。如果定义了类名，则该类名只有在类体内部才能访问到。
 ```javascript
 'use strict';
@@ -45,7 +46,6 @@ var Polygon = class {
     this.width = width;
   }
 };
- 
 // 命名类表达式
 var Polygon = class Polygon {
   constructor(height, width) {
@@ -54,3 +54,14 @@ var Polygon = class Polygon {
   }
 };
 ```
+
+*   构造函数
+
+>类的成员需要定义在一对花括号 {} 里，花括号里的代码和花括号本身组成了类体。类成员包括类构造器和类方法（包括静态方法和实例方法)。  
+class 根据 constructor 方法来创建和初始化对象。  
+constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。一个类只能有一个constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。
+
+*   静态方法
+
+>static关键字定义了一个类的静态方法。静态方法被称为无需实例化类也可当类被实例化。静态方法通常用于为应用程序创建实用函数。  
+[This is Demo](https://github.com/shadow88sky/es6-study/blob/master/class.js)  
