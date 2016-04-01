@@ -8,3 +8,4 @@
 
 ##let
 let 允许把变量的作用域限制在块级域中。与 var 不同处是：var 申明变量要么是全局的，要么是函数级的，而无法是块级的。
+[demo](https://github.com/shadow88sky/es6-study/blob/master/let.js)
