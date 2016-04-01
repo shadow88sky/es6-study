@@ -9,4 +9,10 @@
 
 *   let
 let 允许把变量的作用域限制在块级域中。与 var 不同处是：var 申明变量要么是全局的，要么是函数级的，而无法是块级的。
-[demo](https://github.com/shadow88sky/es6-study/blob/master/let.js)
+[This is demo](https://github.com/shadow88sky/es6-study/blob/master/let.js)
+
+*   const
+const这个声明创建一个常量,可以全局或局部的函数声明。
+一个常量可以是全局的或者是局部的,常量遵循与变量相同的作用域规则。
+一个常量不可以被重新赋值,并且不能被重复声明.所以,虽然可以在声明一个常量的时候不进行初始化,但这样做是没有意义的,因为这个常量的值永远会保持undefined。
+一个常量不能和它所在作用域内的其他变量或函数拥有相同的名称。
