@@ -65,3 +65,8 @@ constructor方法是类的默认方法，通过new命令生成对象实例时，
 
 >static关键字定义了一个类的静态方法。静态方法被称为无需实例化类也可当类被实例化。静态方法通常用于为应用程序创建实用函数。  
 [This is Demo](https://github.com/shadow88sky/es6-study/blob/master/class.js)  
+
+*   使用 extends 关键字创建子类
+
+>extends 关键字可以用来创建继承于某个类的子类。  
+[DEMO](https://github.com/shadow88sky/es6-study/blob/master/class.js)  
