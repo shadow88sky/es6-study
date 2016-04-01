@@ -26,6 +26,7 @@
 *   类声明
 
 >类声明是定义类的一种方式,使用 class 关键字后跟一个类名,就可以定义一个类。  
+[This is demo](https://github.com/shadow88sky/es6-study/blob/master/class.js)
 类声明和函数声明不同的一点是，函数声明存在变量提升现象，而类声明不会。也就是说，你必须先声明类，然后才能使用它，否则代码会抛出 ——ReferenceError 异常，像下面这样：
 ```javascript
 var p = new Polygon(); // ReferenceError
