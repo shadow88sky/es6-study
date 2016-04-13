@@ -74,7 +74,8 @@ constructor方法是类的默认方法，通过new命令生成对象实例时，
 
 ##集合
 
-*   map
+*   map  
+ 
 >map对象是一个简单的键/值映射。任何值（包括对象和原始值）都可以用作一个键或一个值。
 ```javascript
 var m = new Map();
@@ -82,3 +83,41 @@ var o = {p: "Hello World"};
 m.set(o, "content")
 m.get(o) // "content"
 ```
+>上面代码使用set方法，将对象o当作m的一个键。  
+Map也可以接受一个数组作为参数。该数组的成员是一个个表示键值对的数组。
+```javascript
+var map = new Map([["name", "张三"], ["title", "Author"]]);
+map.size // 2
+map.get("name") // "张三"
+map.get("title") // "Author"
+```
+>注意Map的键实际上是跟内存地址绑定的，只要内存地址不一样，就视为两个键。  
+如果使用对象作为键名，就不用担心自己的属性与原作者的属性同名。  
+如果Map的键是一个简单类型的值（数字、字符串、布尔值），则只要两个值严格相等，Map将其视为一个键，包括0和-0。  
+另外，虽然NaN不严格相等于自身，但Map将其视为同一个键。
+
+*   map实例的属性和操作方法
+
+>size属性返回Map结构的成员总数。即返回映射对象中的键/值对的数目。  
+set(key, value)方法设置key所对应的键值，然后返回整个Map结构。如果key已经有值，则键值会被更新，否则就新生成该键。
+```javascript
+var m = new Map();
+m.set("edition", 6)        // 键是字符串
+m.set(262, "standard")     // 键是数值
+m.set(undefined, "nah")    // 键是undefined
+```
+>set方法返回的是Map本身，因此可以采用链式写法。  
+get(key)方法读取key对应的键值，如果找不到key，返回undefined。  
+has(key)方法返回一个布尔值，表示某个键是否在Map数据结构中。  
+delete(key)方法删除某个键，返回true。如果删除失败，返回false。  
+clear()方法清除所有成员，没有返回值。
+
+
+*   map遍历方法
+
+>Map原生提供三个遍历器生成函数和一个遍历方法。  
+keys()：返回键名的遍历器。  
+values()：返回键值的遍历器。  
+entries()：返回所有成员的遍历器。  
+forEach()：遍历Map的所有成员。
+[DEMO](https://github.com/shadow88sky/es6-study/blob/master/map.js)
