@@ -73,3 +73,12 @@ constructor方法是类的默认方法，通过new命令生成对象实例时，
 
 
 ##集合
+
+*   map
+>map对象是一个简单的键/值映射。任何值（包括对象和原始值）都可以用作一个键或一个值。
+```javascript
+var m = new Map();
+var o = {p: "Hello World"};
+m.set(o, "content")
+m.get(o) // "content"
+```
