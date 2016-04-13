@@ -69,4 +69,7 @@ constructor方法是类的默认方法，通过new命令生成对象实例时，
 *   使用 extends 关键字创建子类
 
 >extends 关键字可以用来创建继承于某个类的子类。  
-[DEMO](https://github.com/shadow88sky/es6-study/blob/master/class.js)  
+[DEMO](https://github.com/shadow88sky/es6-study/blob/master/class.js)
+
+
+##集合
