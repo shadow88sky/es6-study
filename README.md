@@ -199,10 +199,10 @@ Promise对象有以下两个特点。
 
 >ES6规定，Promise对象是一个构造函数，用来生成Promise实例。  
 下面代码创造了一个Promise实例。
+
 ```javascript
 var promise = new Promise(function(resolve, reject) {
   // ... some code
- 
   if (/* 异步操作成功 */){
     resolve(value);
   } else {
@@ -210,9 +210,11 @@ var promise = new Promise(function(resolve, reject) {
   }
 });
 ```
+
 >Promise构造函数接受一个函数作为参数，该函数的两个参数分别是resolve和reject。它们是两个函数，由JavaScript引擎提供，不用自己部署。  
 resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从Pending变为Resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从Pending变为Rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。  
 Promise实例生成以后，可以用then方法分别指定Resolved状态和Reject状态的回调函数。
+
 ```javascript
 promise.then(function(value) {
   // success
@@ -220,6 +222,7 @@ promise.then(function(value) {
   // failure
 });
 ```
+
 >then方法可以接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为Resolved时调用，第二个回调函数是Promise对象的状态变为Reject时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
 
 
@@ -227,32 +230,36 @@ promise.then(function(value) {
 
 >箭头函数就是个是简写形式的函数表达式,并且它拥有词法作用域的this值.箭头函数总是匿名的.  
 ES6允许使用“箭头”（=>）定义函数。
+
 ```javascript
 var f = v => v;
- 
 //等同于：
- 
 var f = function(v) {
   return v;
 };
 ```
+
 >如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。
+
 ```javascript
 var f = () => 5;
 // 等同于
 var f = function (){ return 5 };
- 
 var sum = (num1, num2) => num1 + num2;
 // 等同于
 var sum = function(num1, num2) {
   return num1 + num2;
 };
 ```
+
 >如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用return语句返回。
+
 ```javascript
 var sum = (num1, num2) => { return num1 + num2; }
 ```
+
 >由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号。
+
 ```javascript
 var getTempItem = id => ({ id: id, name: "Temp" });
 ```
@@ -260,16 +267,18 @@ var getTempItem = id => ({ id: id, name: "Temp" });
 *   简化回调函数
 
 >箭头函数的一个用处是简化回调函数。
+
 ```javascript
 // 正常函数写法
 [1,2,3].map(function (x) {
   return x * x;
 });
- 
 // 箭头函数写法
 [1,2,3].map(x => x * x);
 ```
+
 >另一个例子是
+
 ```javascript
 // 正常函数写法
 var result = values.sort(function(a, b) {
@@ -288,6 +297,7 @@ var result = values.sort((a, b) => a - b);
 （3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用Rest参数代替。  
 （4）不可以使用yield命令，因此箭头函数不能用作Generator函数。  
 this对象的指向是可变的，但是在箭头函数中，它是固定的。
+
 ```javascript
 function Timer () {
   this.seconds = 0
@@ -297,4 +307,5 @@ var timer = new Timer()
 setTimeout(() => console.log(timer.seconds), 3100)
 // 3
 ```
+
 >上面代码中，Timer函数内部的setInterval-调用了_this.seconds-属性，通过箭头函数将_this绑定在Timer的实例对象。否则，输出结果是0，而不是3。
